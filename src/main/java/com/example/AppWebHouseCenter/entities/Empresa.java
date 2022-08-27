@@ -6,7 +6,6 @@ public class Empresa {
     private String telefonoEmpresa;
     private String nitEmpresa;
 
-    //Espacio para constructores
     public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa){
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
@@ -18,34 +17,42 @@ public class Empresa {
     }
 
     public String getNombreEmpresa() {
+
         return nombreEmpresa;
     }
 
     public void setNombreEmpresa(String nombreEmpresa) {
+
         this.nombreEmpresa = nombreEmpresa;
     }
 
     public String getDireccionEmpresa() {
+
         return direccionEmpresa;
     }
 
     public void setDireccionEmpresa(String direccionEmpresa) {
+
         this.direccionEmpresa = direccionEmpresa;
     }
 
     public String getTelefonoEmpresa() {
+
         return telefonoEmpresa;
     }
 
     public void setTelefonoEmpresa(String telefonoEmpresa) {
+
         this.telefonoEmpresa = telefonoEmpresa;
     }
 
     public String getNitEmpresa() {
+
         return nitEmpresa;
     }
 
     public void setNitEmpresa(String nitEmpresa) {
+
         this.nitEmpresa = nitEmpresa;
     }
 }
