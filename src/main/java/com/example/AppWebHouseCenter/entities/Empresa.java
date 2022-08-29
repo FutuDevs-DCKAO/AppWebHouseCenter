@@ -1,5 +1,8 @@
 package com.example.AppWebHouseCenter.entities;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Empresa {
     private String nombreEmpresa;
     private String direccionEmpresa;
