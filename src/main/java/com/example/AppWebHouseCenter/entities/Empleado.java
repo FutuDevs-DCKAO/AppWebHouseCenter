@@ -1,10 +1,13 @@
 package com.example.AppWebHouseCenter.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Empleado {
 
+    @Id
+    private int documento;
     private String nombre, correo;
     private Empresa empresaPertenciente;
     private String rol;
