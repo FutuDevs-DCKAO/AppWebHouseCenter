@@ -20,7 +20,7 @@ public class ImpEmpresaService implements EmpresaService {
     }
 
     @Override
-    public Empresa consultarEmpresaPorId(Double nitEmpresa) {
+    public Empresa consultarEmpresaPorId(String nitEmpresa) {
 
         return repositoryEmpresa.findById(nitEmpresa).get();
     }
@@ -38,7 +38,7 @@ public class ImpEmpresaService implements EmpresaService {
     }
 
     @Override
-    public void eliminarEmpresa(double nitEmpresa) {
+    public void eliminarEmpresa(String nitEmpresa) {
 
         repositoryEmpresa.deleteById(nitEmpresa);
     }

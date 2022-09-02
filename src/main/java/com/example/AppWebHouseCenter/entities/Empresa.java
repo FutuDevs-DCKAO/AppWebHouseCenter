@@ -7,10 +7,10 @@ public class Empresa {
     private String nombreEmpresa;
     private String direccionEmpresa;
     private String telefonoEmpresa;
-    private double nitEmpresa;
+    private String nitEmpresa;
 
 
-    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, double nitEmpresa){
+    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa){
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
@@ -50,12 +50,12 @@ public class Empresa {
         this.telefonoEmpresa = telefonoEmpresa;
     }
 
-    public double getNitEmpresa() {
+    public String getNitEmpresa() {
 
         return nitEmpresa;
     }
 
-    public void setNitEmpresa(double nitEmpresa) {
+    public void setNitEmpresa(String nitEmpresa) {
 
         this.nitEmpresa = nitEmpresa;
     }
