@@ -5,11 +5,12 @@ import com.example.AppWebHouseCenter.entities.Empleado;
 import java.util.List;
 
 public interface UserService {
-    public List<Empleado>listarempleados();
-    public Empleado crearEmpleados(Empleado empleado);
-    public Empleado consultaEmpleadoporId(String documento);
-    public Empleado editarEmpleado(Empleado empleado);
-    public void eliminarEmpleado(String documento);
+    public List<Empleado>listarempleados(); //Lista todos los usuarios
+
+    public Empleado crearEmpleados(Empleado empleado); //Crea un usuario
+    public Empleado consultaEmpleadoporId(String documento); //Consulta un empleado por documento
+    public Empleado editarEmpleado(Empleado empleado); //Edita un usuario
+    public void eliminarEmpleado(String documento); //Elimina un usuario
 
 
 }
