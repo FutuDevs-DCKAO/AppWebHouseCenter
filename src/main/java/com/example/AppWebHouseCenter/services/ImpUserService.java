@@ -1,32 +1,39 @@
 package com.example.AppWebHouseCenter.services;
 
 import com.example.AppWebHouseCenter.entities.Empleado;
+import com.example.AppWebHouseCenter.repositories.RepositoryUser;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class ImpUserService implements UserService{
+    @Autowired
+    private RepositoryUser repositoryUser;
+
     @Override
     public List<Empleado> listarempleados() {
-        return null;
+        return repositoryUser.findAll();
     }
 
     @Override
     public Empleado crearEmpleados(Empleado empleado) {
-        return null;
+        return repositoryUser.save(empleado);
     }
 
     @Override
-    public Empleado consultaEmpleadosporId(Integer documento) {
-        return null;
+    public Empleado consultaEmpleadoporId(String documento) {
+        return repositoryUser.findById(documento).get();
+
     }
 
     @Override
-    public Empleado editarEmpleados(Empleado empleado) {
-        return null;
+    public Empleado editarEmpleado(Empleado empleado) {
+        return repositoryUser.save(empleado);
     }
 
     @Override
-    public void eliminarEmpleado(Integer documento) {
+    public void eliminarEmpleado(String documento) {
+        repositoryUser.deleteById(documento);
 
     }
 }

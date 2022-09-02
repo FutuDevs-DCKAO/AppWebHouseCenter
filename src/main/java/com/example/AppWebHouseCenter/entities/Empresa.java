@@ -9,6 +9,7 @@ public class Empresa {
     private String telefonoEmpresa;
     private String nitEmpresa;
 
+
     public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa){
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
