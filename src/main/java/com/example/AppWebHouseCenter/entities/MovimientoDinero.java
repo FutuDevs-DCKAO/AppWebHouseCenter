@@ -1,13 +1,25 @@
 package com.example.AppWebHouseCenter.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "movimientoDinero")
 public class MovimientoDinero {
+
+    @Id
+    private int idMovimiento;
+    @Column(name = "montoMovimiento", nullable = false)
     private Double montoMovimiento;
+    @Column(name = "montosPositivos")
     private Double montosPositivos;
+    @Column(name = "montosNegativos")
     private Double montosNegativos;
+    @Column(name = "conceptoMovimiento", length = 80, nullable = false)
     private String conceptoMovimiento;
+    @Column(name = "usuarioMovimiento", nullable = false)
     private Empleado usuarioMovimiento;
 
     public MovimientoDinero(Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, Empleado usuarioMovimiento) {

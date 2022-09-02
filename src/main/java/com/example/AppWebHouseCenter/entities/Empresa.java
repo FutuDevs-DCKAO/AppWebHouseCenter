@@ -1,13 +1,23 @@
 package com.example.AppWebHouseCenter.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Empresa")
 public class Empresa {
-    private String nombreEmpresa;
-    private String direccionEmpresa;
-    private String telefonoEmpresa;
+
+    @Id
     private String nitEmpresa;
+    @Column(name = "nombreEmpresa", length = 50, nullable = false)
+    private String nombreEmpresa;
+    @Column(name = "direccionEmpresa", length = 50, nullable = false)
+    private String direccionEmpresa;
+    @Column(name = "telefonoEmpresa", length = 30, nullable = false)
+    private String telefonoEmpresa;
+
 
     public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa){
         this.nombreEmpresa = nombreEmpresa;
