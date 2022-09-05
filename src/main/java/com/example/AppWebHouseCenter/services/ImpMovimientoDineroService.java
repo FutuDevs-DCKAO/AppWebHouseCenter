@@ -2,9 +2,11 @@ package com.example.AppWebHouseCenter.services;
 
 import com.example.AppWebHouseCenter.entities.MovimientoDinero;
 import com.example.AppWebHouseCenter.repositories.RepositoryMovimientoDinero;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ImpMovimientoDineroService implements MovimientoDineroService {
 
     private RepositoryMovimientoDinero repositoryMovimientoDinero;

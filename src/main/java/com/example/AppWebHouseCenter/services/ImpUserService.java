@@ -3,9 +3,11 @@ package com.example.AppWebHouseCenter.services;
 import com.example.AppWebHouseCenter.entities.Empleado;
 import com.example.AppWebHouseCenter.repositories.RepositoryUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ImpUserService implements UserService{
     @Autowired
     private RepositoryUser repositoryUser;
