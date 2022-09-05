@@ -18,15 +18,16 @@ public class Empleado {
     private String rol;
 
     @ManyToOne
-        @JoinColumn(name = "nit_Empresa_Empleado")
+        @JoinColumn(name = "nit_Empresa")
         Empresa empresa;
 
-    public Empleado(int documento, String nombre, String correo, Empresa empresaPertenciente, String rol) {
+    public Empleado(int documento, String nombre, String correo, Empresa empresaPertenciente, String rol, Empresa empresa) {
         this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
         this.empresaPertenciente = empresaPertenciente;
         this.rol = rol;
+        this.empresa = empresa;
     }
 
     public Empleado(){
@@ -71,5 +72,13 @@ public class Empleado {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }

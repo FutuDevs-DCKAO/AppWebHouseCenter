@@ -3,7 +3,7 @@ package com.example.AppWebHouseCenter.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "movimiento_Dinero")
+@Table
 public class MovimientoDinero {
 
     @Id
@@ -26,17 +26,27 @@ public class MovimientoDinero {
         @JoinColumn(name = "documento_Empleado")
         Empleado empleado;
 
-    public MovimientoDinero(Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, Empleado usuarioMovimiento) {
+    public MovimientoDinero(Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, Empleado usuarioMovimiento, Empresa empresa, Empleado empleado) {
         this.montoMovimiento = montoMovimiento;
         this.montosPositivos = montosPositivos;
         this.montosNegativos = montosNegativos;
         this.conceptoMovimiento = conceptoMovimiento;
         this.usuarioMovimiento = usuarioMovimiento;
+        this.empresa = empresa;
+        this.empleado = empleado;
     }
 
 
     public MovimientoDinero(){
 
+    }
+
+    public int getIdMovimiento() {
+        return idMovimiento;
+    }
+
+    public void setIdMovimiento(int idMovimiento) {
+        this.idMovimiento = idMovimiento;
     }
 
     public Double getMontoMovimiento() {
@@ -77,6 +87,22 @@ public class MovimientoDinero {
 
     public void setUsuarioMovimiento(Empleado usuarioMovimiento) {
         this.usuarioMovimiento = usuarioMovimiento;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 }
 
