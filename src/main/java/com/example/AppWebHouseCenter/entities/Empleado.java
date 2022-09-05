@@ -1,24 +1,44 @@
 package com.example.AppWebHouseCenter.entities;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Empleados")
 public class Empleado {
 
-    private String nombre, correo;
+    @Id
+    private int documento;
+    @Column(name = "nombre", nullable = false, length = 50)
+    private String nombre;
+    @Column(name = "correo", nullable = false, length = 50)
+    private String correo;
+    @Column(name = "empresa_Perteneciente", nullable = false)
     private Empresa empresaPertenciente;
+    @Column(name = "rol", nullable = false, length = 30)
     private String rol;
 
-    public Empleado(String nombre, String correo, Empresa empresaPertenciente, String rol){
+    @ManyToOne
+        @JoinColumn(name = "nit_Empresa_Empleado")
+        Empresa empresa;
+
+    public Empleado(int documento, String nombre, String correo, Empresa empresaPertenciente, String rol) {
+        this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
         this.empresaPertenciente = empresaPertenciente;
         this.rol = rol;
-
     }
 
     public Empleado(){
 
+    }
+
+    public int getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(int documento) {
+        this.documento = documento;
     }
 
     public String getNombre() {

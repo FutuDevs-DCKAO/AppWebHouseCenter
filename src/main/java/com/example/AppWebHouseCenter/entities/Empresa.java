@@ -1,23 +1,42 @@
 package com.example.AppWebHouseCenter.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Empresas")
 public class Empresa {
-    private String nombreEmpresa;
-    private String direccionEmpresa;
-    private String telefonoEmpresa;
+
+    @Id
     private String nitEmpresa;
+    @Column(name = "nombre_Empresa", nullable = false, length = 50)
+    private String nombreEmpresa;
+    @Column(name = "direccion_Empresa", nullable = false, length = 50)
+    private String direccionEmpresa;
+    @Column(name = "telefono_Empresa", nullable = false)
+    private String telefonoEmpresa;
 
 
-    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa){
+    public Empresa(String nitEmpresa, String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa) {
+        this.nitEmpresa = nitEmpresa;
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
-        this.nitEmpresa = nitEmpresa;
     }
 
     public Empresa() {
+    }
+
+    public String getNitEmpresa() {
+
+        return nitEmpresa;
+    }
+
+    public void setNitEmpresa(String nitEmpresa) {
+
+        this.nitEmpresa = nitEmpresa;
     }
 
     public String getNombreEmpresa() {
@@ -50,13 +69,5 @@ public class Empresa {
         this.telefonoEmpresa = telefonoEmpresa;
     }
 
-    public String getNitEmpresa() {
 
-        return nitEmpresa;
-    }
-
-    public void setNitEmpresa(String nitEmpresa) {
-
-        this.nitEmpresa = nitEmpresa;
-    }
 }
