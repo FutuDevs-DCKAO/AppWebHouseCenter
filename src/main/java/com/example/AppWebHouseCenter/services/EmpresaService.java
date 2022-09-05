@@ -11,5 +11,4 @@ public interface EmpresaService {
     public Empresa editarEmpresa(Empresa empresa); // modifica una empresa existente
     public void eliminarEmpresa(String nitEmpresa); // borra empresa
 
-
 }
