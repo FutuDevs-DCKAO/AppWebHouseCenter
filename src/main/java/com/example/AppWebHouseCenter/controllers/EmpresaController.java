@@ -31,7 +31,7 @@ public class EmpresaController {
     }
 
     //Responde GET  a través del objeto creado para obtener una empresa mediante su primary key (NIT)
-    @GetMapping("/{nitEmpresa")
+    @GetMapping("/{nitEmpresa}")
     public Empresa consultarEmpresa(@PathVariable("nitEmpresa") String nitEmpresa){
         return impEmpresaService.consultarEmpresaPorId(nitEmpresa);
     }
@@ -43,7 +43,7 @@ public class EmpresaController {
     }
 
     //Response DELETE para borrar una empresa a través de la primary key (NIT)
-    @DeleteMapping("/(nitEmpresa")
+    @DeleteMapping("/{nitEmpresa}")
     public void eliminarEmpresa(@PathVariable("nitEmpresa") Empresa empresa){
         impEmpresaService.eliminarEmpresaPorId(empresa.getNitEmpresa());
     }

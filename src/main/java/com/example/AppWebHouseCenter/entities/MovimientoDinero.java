@@ -17,7 +17,7 @@ public class MovimientoDinero {
     @Column(name = "concepto_Movimiento", nullable = false)
     private String conceptoMovimiento;
     @Column(name = "usuario_Movimiento", nullable = false)
-    private Empleado usuarioMovimiento;
+    private int usuarioMovimiento;
 
     @ManyToOne
         @JoinColumn(name = "nit_Empresa")
@@ -26,7 +26,8 @@ public class MovimientoDinero {
         @JoinColumn(name = "documento_Empleado")
         Empleado empleado;
 
-    public MovimientoDinero(Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, Empleado usuarioMovimiento, Empresa empresa, Empleado empleado) {
+    public MovimientoDinero(int idMovimiento, Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, int usuarioMovimiento, Empresa empresa, Empleado empleado) {
+        this.idMovimiento = idMovimiento;
         this.montoMovimiento = montoMovimiento;
         this.montosPositivos = montosPositivos;
         this.montosNegativos = montosNegativos;
@@ -35,7 +36,6 @@ public class MovimientoDinero {
         this.empresa = empresa;
         this.empleado = empleado;
     }
-
 
     public MovimientoDinero(){
 
@@ -81,11 +81,11 @@ public class MovimientoDinero {
         this.conceptoMovimiento = conceptoMovimiento;
     }
 
-    public Empleado getUsuarioMovimiento() {
+    public int getUsuarioMovimiento() {
         return usuarioMovimiento;
     }
 
-    public void setUsuarioMovimiento(Empleado usuarioMovimiento) {
+    public void setUsuarioMovimiento(int usuarioMovimiento) {
         this.usuarioMovimiento = usuarioMovimiento;
     }
 
