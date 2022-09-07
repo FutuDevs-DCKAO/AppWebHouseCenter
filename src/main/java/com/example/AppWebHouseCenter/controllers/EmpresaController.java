@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @RequestMapping("/enterprises")
 @RestController
@@ -17,27 +19,35 @@ public class EmpresaController {
 
     //Response GET a través del objeto creado para obtener todas las empresas
     @GetMapping
-    public List<Empresa> listar(){
+    public List<Empresa> listarEmpresas(){
         return impEmpresaService.listarEmpresas();
     }
 
     //Response POST a través del objeto creado para crear nuevas empresas
     @PostMapping
-    public Empresa insertar(@RequestBody Empresa empresa){
+    public Empresa crearEmpresa(@RequestBody Empresa empresa){
 
         return impEmpresaService.crearEmpresa(empresa);
     }
 
-    //Response PUT a través del objeto creado para actualizar los datos de una empresa
-    @PutMapping
-    public Empresa actualizar(@RequestBody Empresa empresa){
-        return impEmpresaService.editarEmpresa(empresa);
+    //Responde GET  a través del objeto creado para obtener una empresa mediante su primary key (NIT)
+    @GetMapping("/{nitEmpresa")
+    public Empresa consultarEmpresa(@PathVariable("nitEmpresa") String nitEmpresa){
+        return impEmpresaService.consultarEmpresaPorId(nitEmpresa);
     }
 
-    //Response DELETE a través del objeto para eliminar los datos de una empresa
-    @DeleteMapping
-    public void eliminar(@RequestBody Empresa empresa){
-        impEmpresaService.eliminarEmpresa(empresa.getNitEmpresa());
+    //Response PUT para actualizar los datos de una empresa a través de la primary key (NIT)
+    @PatchMapping("/{nitEmpresa}")
+    public Empresa actualizarEmpresa(@PathVariable("nitEmpresa") String nitEmpresa, @RequestBody Map<Object, Object> objectMap){
+        return impEmpresaService.actualizarEmpresaPorId(nitEmpresa, objectMap);
     }
+
+    //Response DELETE para borrar una empresa a través de la primary key (NIT)
+    @DeleteMapping("/(nitEmpresa")
+    public void eliminarEmpresa(@PathVariable("nitEmpresa") Empresa empresa){
+        impEmpresaService.eliminarEmpresaPorId(empresa.getNitEmpresa());
+    }
+
+
 
 }

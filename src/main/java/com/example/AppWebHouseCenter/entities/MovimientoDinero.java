@@ -10,13 +10,13 @@ public class MovimientoDinero {
     private int idMovimiento;
     @Column(name = "monto_Movimiento", nullable = false)
     private Double montoMovimiento;
-    @Column(name = "montos_Positivos")
+    @Column(name = "montos_Positivos", nullable = false)
     private Double montosPositivos;
-    @Column(name = "montos_Negativos")
+    @Column(name = "montos_Negativos", nullable = false)
     private Double montosNegativos;
     @Column(name = "concepto_Movimiento", nullable = false)
     private String conceptoMovimiento;
-    @Column(name = "usuario_Movimiento")
+    @Column(name = "usuario_Movimiento", nullable = false)
     private Empleado usuarioMovimiento;
 
     @ManyToOne

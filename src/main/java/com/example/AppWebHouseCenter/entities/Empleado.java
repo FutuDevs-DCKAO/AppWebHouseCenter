@@ -3,7 +3,7 @@ package com.example.AppWebHouseCenter.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Empleados")
+@Table
 public class Empleado {
 
     @Id
