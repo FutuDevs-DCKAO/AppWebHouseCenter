@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("/users")
 @RestController
@@ -28,8 +29,8 @@ public class UserControllers {
     }
 
     @PatchMapping
-    public Empleado editarEmpleado(@RequestBody Empleado empleado){
-        return impUserService.editarEmpleado(empleado);
+    public Empleado editarEmpleado(@PathVariable("documento") String documento, @RequestBody Map<Object, Object> objectMap){
+        return impUserService.editarEmpleado(documento, objectMap);
     }
 
     @DeleteMapping("/{documento}")
