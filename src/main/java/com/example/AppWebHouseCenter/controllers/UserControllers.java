@@ -38,5 +38,4 @@ public class UserControllers {
         impUserService.eliminarEmpleado(documento);
     }
 
-
 }

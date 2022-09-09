@@ -12,5 +12,4 @@ public interface UserService {
     public Empleado editarEmpleado(String documento, Map<Object,Object> objectMap); //Edita un usuario existente
     public void eliminarEmpleado(String documento); //Elimina un usuario existente
 
-
 }
