@@ -38,6 +38,7 @@ public class ImpEmpresaService implements EmpresaService {
     public Empresa actualizarEmpresaPorId(String nitEmpresa, Map<Object, Object> objectMap) {
 
         Empresa empresa = repositoryEmpresa.findById(nitEmpresa).get();
+
         objectMap.forEach((key,value)->{
             Field field = ReflectionUtils.findField(Empresa.class, (String) key);
             field.setAccessible(true);

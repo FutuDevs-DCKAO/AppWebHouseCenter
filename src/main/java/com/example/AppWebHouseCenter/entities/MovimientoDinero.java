@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class MovimientoDinero {
 
     @Id
-    private int idMovimiento;
+    private String idMovimiento;
     @Column(name = "monto_Movimiento", nullable = false)
     private Double montoMovimiento;
     @Column(name = "montos_Positivos", nullable = false)
@@ -26,7 +26,7 @@ public class MovimientoDinero {
         @JoinColumn(name = "documento_Empleado")
         Empleado empleado;
 
-    public MovimientoDinero(int idMovimiento, Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, int usuarioMovimiento, Empresa empresa, Empleado empleado) {
+    public MovimientoDinero(String idMovimiento, Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, int usuarioMovimiento, Empresa empresa, Empleado empleado) {
         this.idMovimiento = idMovimiento;
         this.montoMovimiento = montoMovimiento;
         this.montosPositivos = montosPositivos;
@@ -41,11 +41,11 @@ public class MovimientoDinero {
 
     }
 
-    public int getIdMovimiento() {
+    public String getIdMovimiento() {
         return idMovimiento;
     }
 
-    public void setIdMovimiento(int idMovimiento) {
+    public void setIdMovimiento(String idMovimiento) {
         this.idMovimiento = idMovimiento;
     }
 
