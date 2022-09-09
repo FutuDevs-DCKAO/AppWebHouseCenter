@@ -37,5 +37,4 @@ public class UserControllers {
     public void eliminarEmpleado(@PathVariable("documento") String documento){
         impUserService.eliminarEmpleado(documento);
     }
-
 }
