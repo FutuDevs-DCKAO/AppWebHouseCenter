@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Empleado {
 
     @Id
-    private int documento;
+    private String documento;
     @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
     @Column(name = "correo", nullable = false, length = 50)
@@ -21,7 +21,7 @@ public class Empleado {
         @JoinColumn(name = "nit_Empresa")
         Empresa empresa;
 
-    public Empleado(int documento, String nombre, String correo, String rol, String empresaPertenciente, Empresa empresa) {
+    public Empleado(String documento, String nombre, String correo, String rol, String empresaPertenciente, Empresa empresa) {
         this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
@@ -34,7 +34,7 @@ public class Empleado {
 
     }
 
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
