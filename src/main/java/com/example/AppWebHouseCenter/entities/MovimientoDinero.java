@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class MovimientoDinero {
 
     @Id
-    private int idMovimiento;
+    private String idMovimiento;
     @Column(name = "monto_Movimiento", nullable = false)
     private Double montoMovimiento;
     @Column(name = "montos_Positivos")
@@ -17,7 +17,7 @@ public class MovimientoDinero {
     @Column(name = "concepto_Movimiento", nullable = false)
     private String conceptoMovimiento;
     @Column(name = "usuario_Movimiento")
-    private Empleado usuarioMovimiento;
+    private int usuarioMovimiento;
 
     @ManyToOne
         @JoinColumn(name = "nit_Empresa")
@@ -26,7 +26,8 @@ public class MovimientoDinero {
         @JoinColumn(name = "documento_Empleado")
         Empleado empleado;
 
-    public MovimientoDinero(Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, Empleado usuarioMovimiento, Empresa empresa, Empleado empleado) {
+    public MovimientoDinero(String idMovimiento, Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, int usuarioMovimiento, Empresa empresa, Empleado empleado) {
+        this.idMovimiento = idMovimiento;
         this.montoMovimiento = montoMovimiento;
         this.montosPositivos = montosPositivos;
         this.montosNegativos = montosNegativos;
@@ -36,16 +37,15 @@ public class MovimientoDinero {
         this.empleado = empleado;
     }
 
-
     public MovimientoDinero(){
 
     }
 
-    public int getIdMovimiento() {
+    public String getIdMovimiento() {
         return idMovimiento;
     }
 
-    public void setIdMovimiento(int idMovimiento) {
+    public void setIdMovimiento(String idMovimiento) {
         this.idMovimiento = idMovimiento;
     }
 
@@ -81,11 +81,11 @@ public class MovimientoDinero {
         this.conceptoMovimiento = conceptoMovimiento;
     }
 
-    public Empleado getUsuarioMovimiento() {
+    public int getUsuarioMovimiento() {
         return usuarioMovimiento;
     }
 
-    public void setUsuarioMovimiento(Empleado usuarioMovimiento) {
+    public void setUsuarioMovimiento(int usuarioMovimiento) {
         this.usuarioMovimiento = usuarioMovimiento;
     }
 

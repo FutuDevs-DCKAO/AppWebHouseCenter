@@ -19,8 +19,8 @@ public class MovimientoDineroController {
     private ImpMovimientoDineroService impMovimientoDineroService;
 
     @GetMapping
-    public MovimientoDinero ConsultarMovimientoPorId(@PathVariable ("idMovimiento")Integer idMovimiento){
-        return impMovimientoDineroService.ConsultarPorId(idMovimiento);
+    public MovimientoDinero ConsultarMovimientoPorId(@PathVariable ("idMovimiento")String idMovimiento){
+        return impMovimientoDineroService.ConsultarMovimientoPorId(idMovimiento);
 
     }
 
@@ -30,8 +30,8 @@ public class MovimientoDineroController {
         return impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);}
 
     @PatchMapping
-        public MovimientoDinero actualizarPorId (@PathVariable ("idMovimiento") Integer idMovimiento, @RequestBody Map<Object,Object> objectMap){
-            return impMovimientoDineroService.editarMovimientoDinero(idMovimiento,objectMap);}
+        public MovimientoDinero actualizarPorId (@PathVariable ("idMovimiento") String idMovimiento, @RequestBody Map<Object,Object> objectMap){
+            return impMovimientoDineroService.ActualizarMovimientoDinero(idMovimiento,objectMap);}
 
     @DeleteMapping
     public void eliminarMovimientoDinero(@RequestBody MovimientoDinero movimientoDinero){

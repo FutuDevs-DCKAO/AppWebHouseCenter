@@ -12,25 +12,22 @@ import java.util.Map;
 @Service
 public class ImpMovimientoDineroService implements MovimientoDineroService {
 
-    private RepositoryMovimientoDinero repositoryMovimientoDinero;
-    @Override
-    public MovimientoDinero ConsultarPorId(Integer idMovimiento){
-        return repositoryMovimientoDinero.findById(idMovimiento).get();
 
+    private RepositoryMovimientoDinero repositoryMovimientoDinero;
+
+    @Override
+    public MovimientoDinero ConsultarMovimientoPorId(String idMovimiento) {
+        return repositoryMovimientoDinero.findById(idMovimiento).get();
     }
+
     @Override
     public MovimientoDinero crearMovimientoDinero(MovimientoDinero movimientoDinero) {
         return repositoryMovimientoDinero.save(movimientoDinero);
     }
 
     @Override
-    public MovimientoDinero consultaMovimientoDineroporId(Integer idMovimiento) {
-        return repositoryMovimientoDinero.findById(idMovimiento).get();
-    }
-
-    @Override
-    public MovimientoDinero editarMovimientoDinero(Integer idMovimiento, Map<Object, Object> objectMap) {
-        MovimientoDinero empresa = repositoryMovimientoDinero.findById(idMovimiento).get();
+    public MovimientoDinero ActualizarMovimientoDinero(String idMovimiento, Map<Object, Object> objectMap) {
+        MovimientoDinero empresa = repositoryMovimientoDinero.findById(String.valueOf(idMovimiento)).get();
         objectMap.forEach((key,value)->{
             Field field = ReflectionUtils.findField(MovimientoDinero.class, (String) key);
             field.setAccessible(true);
@@ -38,12 +35,12 @@ public class ImpMovimientoDineroService implements MovimientoDineroService {
         });
         return repositoryMovimientoDinero.save(empresa);
 
+
     }
 
 
-
     @Override
-    public void eliminarMovimientoDinero(Integer idMovimiento) {
-        repositoryMovimientoDinero.deleteById(idMovimiento);
+    public void eliminarMovimientoDinero(String idMovimiento) {
+        repositoryMovimientoDinero.deleteById(String.valueOf(idMovimiento));
     }
 }
