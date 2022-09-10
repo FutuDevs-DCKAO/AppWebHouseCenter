@@ -1,6 +1,6 @@
 package com.example.AppWebHouseCenter.controllers;
-
 import com.example.AppWebHouseCenter.entities.Empresa;
+import com.example.AppWebHouseCenter.services.ImpEmpresaService;
 import com.example.AppWebHouseCenter.services.ImpEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class EmpresaController {
 
     //Creación objeto clase ImpEmpresaService para poder acceder a los métodos de la clase
     @Autowired
-    private ImpEmpresaService impEmpresaService;
+    private com.example.AppWebHouseCenter.services.ImpEmpresaService impEmpresaService;
 
     //Response GET a través del objeto creado para obtener todas las empresas
     @GetMapping

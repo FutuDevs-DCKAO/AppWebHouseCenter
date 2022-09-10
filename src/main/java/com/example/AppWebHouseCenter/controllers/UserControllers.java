@@ -28,7 +28,7 @@ public class UserControllers {
         return impUserService.consultaEmpleadoporId(documento);
     }
 
-    @PatchMapping
+    @PatchMapping("/{documento}")
     public Empleado editarEmpleado(@PathVariable("documento") String documento, @RequestBody Map<Object, Object> objectMap){
         return impUserService.editarEmpleado(documento, objectMap);
     }

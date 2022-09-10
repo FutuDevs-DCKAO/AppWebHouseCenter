@@ -14,19 +14,19 @@ public class Empleado {
     private String correo;
     @Column(name = "rol", nullable = false, length = 30)
     private String rol;
-    @Column(name = "empresa_Perteneciente", nullable = false)
-    private String empresaPertenciente;
+   /* @Column(name = "empresa_Perteneciente", nullable = false)
+    private String empresaPertenciente;*/
 
     @ManyToOne
         @JoinColumn(name = "nit_Empresa")
         Empresa empresa;
 
-    public Empleado(String documento, String nombre, String correo, String rol, String empresaPertenciente, Empresa empresa) {
+    public Empleado(String documento, String nombre, String correo, String rol, Empresa empresa) {
         this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
         this.rol = rol;
-        this.empresaPertenciente = empresaPertenciente;
+       // this.empresaPertenciente = empresaPertenciente;
         this.empresa = empresa;
     }
 
@@ -58,13 +58,13 @@ public class Empleado {
         this.correo = correo;
     }
 
-    public String getEmpresaPertenciente() {
+   /* public String getEmpresaPertenciente() {
         return empresaPertenciente;
     }
 
     public void setEmpresaPertenciente(String empresaPertenciente) {
         this.empresaPertenciente = empresaPertenciente;
-    }
+    }*/
 
     public String getRol() {
         return rol;
