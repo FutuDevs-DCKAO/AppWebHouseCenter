@@ -23,7 +23,7 @@ public class MovimientoDineroController {
         return impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
     }
 
-    @GetMapping("/movements/all")
+    @GetMapping("/movements/all") //Permite listar todos los movimientos de dinero de una empresa
     public List<MovimientoDinero> listarMovimientos(){
         return impMovimientoDineroService.listarMovimientos();
     }

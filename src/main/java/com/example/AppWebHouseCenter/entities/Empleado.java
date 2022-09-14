@@ -1,5 +1,8 @@
 package com.example.AppWebHouseCenter.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,7 +19,8 @@ public class Empleado {
     private String rol;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
         @JoinColumn(name = "nit_Empresa")
         Empresa empresa;
 
