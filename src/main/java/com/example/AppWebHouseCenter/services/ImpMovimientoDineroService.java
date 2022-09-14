@@ -1,6 +1,5 @@
 package com.example.AppWebHouseCenter.services;
 
-import com.example.AppWebHouseCenter.entities.Empresa;
 import com.example.AppWebHouseCenter.entities.MovimientoDinero;
 import com.example.AppWebHouseCenter.repositories.RepositoryMovimientoDinero;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +7,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class ImpMovimientoDineroService implements MovimientoDineroService {
     @Autowired
     private RepositoryMovimientoDinero repositoryMovimientoDinero;
+
+    @Override
+    public List<MovimientoDinero> listarMovimientos() {
+        return repositoryMovimientoDinero.findAll();
+    }
 
     @Override
     public MovimientoDinero consultarMovimientoDineroporId(String idMovimiento) {

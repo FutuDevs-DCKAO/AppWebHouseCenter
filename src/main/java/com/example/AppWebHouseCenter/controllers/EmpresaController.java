@@ -15,7 +15,7 @@ public class EmpresaController {
 
     //Creación objeto clase ImpEmpresaService para poder acceder a los métodos de la clase
     @Autowired
-    private com.example.AppWebHouseCenter.services.ImpEmpresaService impEmpresaService;
+    private ImpEmpresaService impEmpresaService;
 
     //Response GET a través del objeto creado para obtener todas las empresas
     @GetMapping

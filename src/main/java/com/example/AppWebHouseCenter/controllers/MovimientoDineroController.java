@@ -3,6 +3,7 @@ package com.example.AppWebHouseCenter.controllers;
 import com.example.AppWebHouseCenter.entities.Empleado;
 import com.example.AppWebHouseCenter.entities.Empresa;
 import com.example.AppWebHouseCenter.entities.MovimientoDinero;
+import com.example.AppWebHouseCenter.services.EmpresaService;
 import com.example.AppWebHouseCenter.services.ImpMovimientoDineroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,11 @@ public class MovimientoDineroController {
     @PostMapping("/movements")
     public MovimientoDinero insertarNuevosMovimientos(@RequestBody MovimientoDinero movimientoDinero){
         return impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
+    }
+
+    @GetMapping("/movements/all")
+    public List<MovimientoDinero> listarMovimientos(){
+        return impMovimientoDineroService.listarMovimientos();
     }
 
     @GetMapping("/{idMovimiento}/movements")
