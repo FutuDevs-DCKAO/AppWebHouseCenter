@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos de dinero</title>
+    <link rel="stylesheet" th:href="@{css/styleTableMovDinero.css}">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id movimiento</th>
+                <th>Monto del movimiento</th>
+                <th>Montos positivos</th>
+                <th>Montos negativos</th>
+                <th>Concepto del movimiento</th>
+                <th>Empresa</th>
+                <th>Empleado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="i:${clientes}">
+                <td th:text="${i.idMovimiento}">1</td>
+                <td th:text="${i.montoMovimiento}">5131321</td>
+                <td th:text="${i.montosPositivos}">0.0</td>
+                <td th:text="${i.montosNegativos}">0.0</td>
+                <td th:text="${i.conceptoMovimiento}">Pago de nómina empleados</td>
+                <td th:text="${i.empresa}">860900963-1</td>
+                <td th:text="${i.empleado}">1001369524</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
