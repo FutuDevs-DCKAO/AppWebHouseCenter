@@ -6,10 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movimientos de dinero</title>
-    <link rel="stylesheet" th:href="@{css/styleTableMovDinero.css}">
+    <!-- CSS only -->
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css}" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styleTableMovDinero.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
 </head>
 
 <body>
+    <header class="contheader" id="contenca">
+        <div class="titulologo">
+            <h1 class="titulo">House Center Web</h1>
+        </div>
+        <div class="logo">
+            <img src="../images/logoempresa.png" alt="Logo empresa" id="Logoempresa">
+        </div>
+    </header>
+
+    <h2 id="tituloRegistroMovimiento">
+        Registro de movimientos House Center
+    </h2>
     <table>
         <thead>
             <tr>
@@ -20,18 +36,22 @@
                 <th>Concepto del movimiento</th>
                 <th>Empresa</th>
                 <th>Empleado</th>
+                <th>Acción 1</th>
+                <th>Acción 2</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr th:each="i:${clientes}">
-                <td th:text="${i.idMovimiento}">1</td>
-                <td th:text="${i.montoMovimiento}">5131321</td>
-                <td th:text="${i.montosPositivos}">0.0</td>
-                <td th:text="${i.montosNegativos}">0.0</td>
-                <td th:text="${i.conceptoMovimiento}">Pago de nómina empleados</td>
-                <td th:text="${i.empresa}">860900963-1</td>
-                <td th:text="${i.empleado}">1001369524</td>
+            <tr th:each="i:${movimientosDinero}">
+                <td th:text="${i.idMovimiento}"></td>
+                <td th:text="${i.montoMovimiento}"></td>
+                <td th:text="${i.montosPositivos}"></td>
+                <td th:text="${i.montosNegativos}"></td>
+                <td th:text="${i.conceptoMovimiento}"></td>
+                <td th:text="${i.empresa.nitEmpresa}"></td>
+                <td th:text="${i.empleado.documento}"></td>
+                <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Consultar</button></a></td>
+                <td id="tdDelete"><a href=""><button type="button" class="btn btn-danger">Eliminar</button></a></td>
             </tr>
         </tbody>
     </table>
