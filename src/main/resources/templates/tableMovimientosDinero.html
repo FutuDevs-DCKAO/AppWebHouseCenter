@@ -51,7 +51,7 @@
                 <td th:text="${i.empresa.nitEmpresa}"></td>
                 <td th:text="${i.empleado.documento}"></td>
                 <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Consultar</button></a></td>
-                <td id="tdDelete"><a href=""><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+                <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
             </tr>
         </tbody>
     </table>

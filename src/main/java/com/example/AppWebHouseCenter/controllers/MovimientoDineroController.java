@@ -42,8 +42,10 @@ public class MovimientoDineroController {
         return impMovimientoDineroService.actualizarMovimientoDineroPorId(idMovimiento, objectMap);
     }
 
-    @DeleteMapping("/{idMovimiento}/movements")
-    public void eliminarMovimientoDineroPorId(@PathVariable("idMovimiento") String idMovimiento){
+    //Método get para la eliminación del movimiento de dinero en la tabla de movimientos
+    @GetMapping("/enterprises/movements/all/eliminar/{idMovimiento}")
+    public String eliminarMovimientoDineroPorId(@PathVariable("idMovimiento") String idMovimiento){
        impMovimientoDineroService.eliminarMovimientoDinero(idMovimiento);
+       return ("redirect:/enterprises/movements/all");
     }
 }
