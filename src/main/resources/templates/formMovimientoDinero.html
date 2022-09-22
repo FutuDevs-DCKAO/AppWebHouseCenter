@@ -7,23 +7,30 @@
     <link rel="stylesheet" th:href="@{css/style_Formulario.css}">
     <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css}" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
     <title>Formulario Registro</title>
 </head>
 <body>
-    <section class="form-register">
+    <form class="form-register" th:action="@{/movements/save}" th:objec="${movimientoinsertar}" method="POST">
         <h4>Formulario Movimiento de Dinero</h4>
-        <input class="controls" type="double"name="idMovimiento" id="idMovimiento" placeholder="Ingrese id de Movimiento">
-        <input class="controls" type="text" name="MontoMovimiento" id="MontoMovimiento" placeholder="Ingrese Monto Movimiento">
-        <input class="controls" type="text" name="MontosPositivos" id="MontosPositivos" placeholder="Ingrese Montos Positivos">
-        <input class="controls" type="text" name="MontosNegativos" id="MontosNegativos" placeholder="Ingrese Montos Negativos">
-        <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento" placeholder="Ingrese concepto del movimiento">
-        <input class="controls" type="text" name="Empresa" id="Empresa" placeholder="Ingrese Nombre de la Empresa">
-        <input class="controls" type="text" name="Empleado" id="Empleado" placeholder="Ingrese id de Empleado">
+
+        <label for="idMovimiento">ID del movimiento</label>
+        <input class="controls" type="text" name="idMovimiento" id="idMovimiento" required th:field="*{idMovimiento}">
+
+        <input class="controls" type="text" name="MontoMovimiento" id="MontoMovimiento" required th:field="*{montoMovimiento}">
+
+        <input class="controls" type="text" name="MontosPositivos" id="MontosPositivos" th:field="*{montosPositivos}">
+
+        <input class="controls" type="text" name="MontosNegativos" id="MontosNegativos" th:field="*{montosNegativos}">
+
+        <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento" th:field="*{conceptoMovimiento}">
+
+        <input class="controls" type="text" name="Empresa" id="Empresa" th:field="*{empresa.nitEmpresa}">
+
+        <input class="controls" type="text" name="Empleado" id="Empleado" th:field="*{empleado.documento}">
+
         <p> Estoy de acuerdo con <a href="#">Terminos y Condiciones</a> </p>
+
         <input class="botons" type="submit" value="Registrar Movimiento">
-        <p><a href="#">¿Ya tengo cuenta?</a> </p>
-    </section>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>!-->
+    </form>
 </body>
 </html>

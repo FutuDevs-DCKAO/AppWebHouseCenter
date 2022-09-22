@@ -8,6 +8,7 @@ import com.example.AppWebHouseCenter.services.ImpMovimientoDineroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,15 +29,24 @@ public class MovimientoDineroController {
         return ("tableMovimientosDinero");
     }
 
-    @PostMapping("/movements")
-    public MovimientoDinero insertarNuevosMovimientos(@RequestBody MovimientoDinero movimientoDinero){
-        return impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
-    }
-
     @GetMapping("/{idMovimiento}/movements")
     public MovimientoDinero consultaMovimientoporId(@PathVariable("idMovimiento") String idMovimiento){
         return impMovimientoDineroService.consultarMovimientoDineroporId(idMovimiento);
     }
+
+    @GetMapping("enterprises/movements/register")
+    public String registroMovimientoFormulario(Model model){
+        model.addAttribute("movimientoinsertar", new MovimientoDinero());
+        return ("formMovimientoDinero");
+    }
+
+    @PostMapping("movements/save")
+    public String insertarNuevosMovimientos(@Validated MovimientoDinero movimientoDinero){
+        impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
+        return "redirect:/enterprises/movements/all";
+    }
+
+
     @PatchMapping("/{idMovimiento}/movements")
     public MovimientoDinero actualizarMovimientoDineroId(@PathVariable("idMovimiento") String idMovimiento, @RequestBody Map<Object, Object> objectMap){
         return impMovimientoDineroService.actualizarMovimientoDineroPorId(idMovimiento, objectMap);
