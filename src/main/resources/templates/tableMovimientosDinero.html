@@ -37,7 +37,6 @@
                 <th>Empresa</th>
                 <th>Empleado</th>
                 <th>Acción 1</th>
-                <th>Acción 2</th>
             </tr>
         </thead>
 
@@ -50,8 +49,8 @@
                 <td th:text="${i.conceptoMovimiento}"></td>
                 <td th:text="${i.empresa.nitEmpresa}"></td>
                 <td th:text="${i.empleado.documento}"></td>
-                <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Consultar</button></a></td>
-                <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+                <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Actualizar</button></a></td>
+                <!-- <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td> -->
             </tr>
         </tbody>
     </table>

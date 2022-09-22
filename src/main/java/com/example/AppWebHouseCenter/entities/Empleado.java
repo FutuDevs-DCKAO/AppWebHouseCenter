@@ -21,8 +21,10 @@ public class Empleado {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-        @JoinColumn(name = "nit_Empresa")
-        Empresa empresa;
+    @JoinColumn(name = "nit_Empresa")
+    Empresa empresa;
+
+
 
     public Empleado(String documento, String nombre, String correo, String rol, Empresa empresa) {
         this.documento = documento;

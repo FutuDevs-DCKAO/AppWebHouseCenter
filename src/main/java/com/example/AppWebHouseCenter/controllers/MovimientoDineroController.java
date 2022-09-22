@@ -42,10 +42,15 @@ public class MovimientoDineroController {
         return impMovimientoDineroService.actualizarMovimientoDineroPorId(idMovimiento, objectMap);
     }
 
+    @DeleteMapping("/enterprises/{idMovimiento}/movements")
+    public void eliminarPorIdPruebaPostMan(@PathVariable("idMovimiento") String idMovimiento){
+        impMovimientoDineroService.eliminarMovimientoDinero(idMovimiento);
+    }
+
     //Método get para la eliminación del movimiento de dinero en la tabla de movimientos
-    @GetMapping("/enterprises/movements/all/eliminar/{idMovimiento}")
+    /*@GetMapping("/enterprises/movements/all/eliminar/{idMovimiento}")
     public String eliminarMovimientoDineroPorId(@PathVariable("idMovimiento") String idMovimiento){
        impMovimientoDineroService.eliminarMovimientoDinero(idMovimiento);
        return ("redirect:/enterprises/movements/all");
-    }
+    }*/
 }

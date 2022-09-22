@@ -23,12 +23,12 @@ public class MovimientoDinero {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-        @JoinColumn(name = "nit_Empresa")
-        Empresa empresa;
+    @JoinColumn(name = "nit_Empresa")
+    Empresa empresa;
     @ManyToOne(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-        @JoinColumn(name = "documento_Empleado")
-        Empleado empleado;
+    @JoinColumn(name = "documento_Empleado")
+    Empleado empleado;
 
     public MovimientoDinero(String idMovimiento, Double montoMovimiento, Double montosPositivos, Double montosNegativos, String conceptoMovimiento, Empresa empresa, Empleado empleado) {
         this.idMovimiento = idMovimiento;
