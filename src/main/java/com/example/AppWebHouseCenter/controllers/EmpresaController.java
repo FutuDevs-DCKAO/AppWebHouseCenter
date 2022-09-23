@@ -1,13 +1,15 @@
 package com.example.AppWebHouseCenter.controllers;
 import com.example.AppWebHouseCenter.entities.Empresa;
 import com.example.AppWebHouseCenter.services.ImpEmpresaService;
-import com.example.AppWebHouseCenter.services.ImpEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+
 
 @RequestMapping("/enterprises")
 @RestController
@@ -17,6 +19,14 @@ public class EmpresaController {
     @Autowired
     private ImpEmpresaService impEmpresaService;
 
+
+    @GetMapping("/")
+    public String inicio(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if(principal !=null) {
+            System.out.print(principal.getClaims());
+        }
+        return "index";
+    }
     //Response GET a través del objeto creado para obtener todas las empresas
     @GetMapping
     public List<Empresa> listarEmpresas(){
@@ -47,7 +57,6 @@ public class EmpresaController {
     public void eliminarEmpresa(@PathVariable("nitEmpresa") Empresa empresa){
         impEmpresaService.eliminarEmpresaPorId(empresa.getNitEmpresa());
     }
-
-
+//-----------------------------------------------
 
 }

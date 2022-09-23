@@ -95,3 +95,15 @@ a{
     box-shadow: 6px 6px gray;
     margin-top: 250px;
 }
+
+.Log{
+
+    color:#563D64;
+    padding: 20px;
+}
+
+.LogText{
+     font-size:28px;
+        color:#563D64;
+        padding: 20px;
+}

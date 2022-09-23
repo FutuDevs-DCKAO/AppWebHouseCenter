@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{css/reset.css}">
     <link rel="stylesheet" th:href="@{css/stiless.css}">
+
     <title>HouseCenter</title>
 
 </head>
+<div class ="Log" sec:authorize="!isAuthenticated()">
+    <a class ="LogText"th:href="@{/oauth2/authorization/auth0}">Log In</a>
+</div>
+
+<!--<div class ="Log" sec:authorize="isAuthenticated()">
+    <a class ="LogText" th:href="@{/cliente}">Carga Aplicación</a>
+</div>-->
+
 
 <body>
     <header class="contheader" id="contenca">
@@ -21,7 +30,7 @@
     </header>
 
     <nav class="menu">
-        <div class="contenedortitulo2">
+        <div class="contenedortitulo2" sec:authorize="isAuthenticated()">
             <h2 class="titulo2">Sistema de Gestión de Ingresos y Egresos</h2>
             <ul>
                 <li class="lista"><a th:href="@{enterprises/movements/all}">Listar movimientos de dinero</a></li>
@@ -29,9 +38,9 @@
             </ul>
         </div>
         
-        </nav>
-    
-    
+    </nav>
+
+
     
 </body>
 </html>

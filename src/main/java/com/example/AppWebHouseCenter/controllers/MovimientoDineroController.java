@@ -36,14 +36,17 @@ public class MovimientoDineroController {
 
     @GetMapping("enterprises/movements/register")
     public String registroMovimientoFormulario(Model model){
-        model.addAttribute("movimientoinsertar", new MovimientoDinero());
+        model.addAttribute("mmovimientoinsertar", new MovimientoDinero());
         return ("formMovimientoDinero");
     }
 
+
     @PostMapping("movements/save")
-    public String insertarNuevosMovimientos(@Validated MovimientoDinero movimientoDinero){
+    public String insertarNuevosMovimientos (@Validated MovimientoDinero movimientoDinero){
+
         impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
         return "redirect:/enterprises/movements/all";
+
     }
 
 
