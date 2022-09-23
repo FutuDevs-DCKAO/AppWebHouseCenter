@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-//@RequestMapping("/enterprises")
-//@RestController
 @Controller
 public class MovimientoDineroController {
 
@@ -34,19 +32,19 @@ public class MovimientoDineroController {
         return impMovimientoDineroService.consultarMovimientoDineroporId(idMovimiento);
     }
 
-    @GetMapping("enterprises/movements/register")
+    @GetMapping("/enterprises/movements/register")
     public String registroMovimientoFormulario(Model model){
         model.addAttribute("movimientoinsertar", new MovimientoDinero());
         return ("formMovimientoDinero");
     }
 
-    @PostMapping("movements/save")
+    @PostMapping("/enterprises/movements/save")
     public String insertarNuevosMovimientos(@Validated MovimientoDinero movimientoDinero){
         impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
         return "redirect:/enterprises/movements/all";
     }
 
-
+    //-------------------------------------------------------------
     @PatchMapping("/{idMovimiento}/movements")
     public MovimientoDinero actualizarMovimientoDineroId(@PathVariable("idMovimiento") String idMovimiento, @RequestBody Map<Object, Object> objectMap){
         return impMovimientoDineroService.actualizarMovimientoDineroPorId(idMovimiento, objectMap);
