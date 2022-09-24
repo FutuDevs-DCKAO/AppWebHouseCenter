@@ -8,7 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/style_Formulario.css}">
     <link rel="stylesheet" th:href="@{/css/stiless.css}">
     <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <title>Formulario registro movimiento dinero</title>
+    <title>Actualización movimiento dinero</title>
 </head>
 
 <header class="contheader" id="contenca">
@@ -21,8 +21,8 @@
 </header>
 
 <body>
-    <form class="form-register" th:action="@{/enterprises/movements/save}" th:object="${movimientoinsertar}" method="POST">
-        <h4>Formulario Movimiento de Dinero</h4><
+    <form class="form-register" th:action="@{/enterprises/movements/update}" th:object="${movimientoactualizar}" method="POST">
+        <h4>Actualización Movimiento de Dinero</h4>
 
         <label for="idMovimiento" class="etiquetaDesc">ID del movimiento</label>
         <input class="controls" type="text" name="idMovimiento" id="idMovimiento" required th:field="*{idMovimiento}">
@@ -37,7 +37,7 @@
         <input class="controls" type="text" name="MontosNegativos" id="MontosNegativos" required th:field="*{montosNegativos}">
 
         <label for="ConceptoMovimiento" class="etiquetaDesc">Concepto movimiento</label>
-        <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento"required th:field="*{conceptoMovimiento}">
+        <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento" required th:field="*{conceptoMovimiento}">
 
         <label for="Empresa" class="etiquetaDesc">Nit empresa</label>
         <input class="controls" type="text" name="Empresa" id="Empresa" required th:field="*{empresa.nitEmpresa}">
@@ -45,7 +45,7 @@
         <label for="Empleado" class="etiquetaDesc">Documento empleado</label>
         <input class="controls" type="text" name="Empleado" id="Empleado" required th:field="*{empleado.documento}">
 
-        <input class="botons" type="submit" value="Registrar Movimiento">
+        <input class="botons" type="submit" value="Actualizar Movimiento">
 
 
     </form>

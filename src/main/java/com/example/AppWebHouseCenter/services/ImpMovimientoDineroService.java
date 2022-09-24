@@ -27,6 +27,11 @@ public class ImpMovimientoDineroService implements MovimientoDineroService {
     }
 
     @Override
+    public MovimientoDinero actualizarMovimiento(MovimientoDinero movimientoDinero) {
+        return repositoryMovimientoDinero.save(movimientoDinero);
+    }
+
+    @Override
     public MovimientoDinero crearMovimientoDinero(MovimientoDinero movimientoDinero) {
         return repositoryMovimientoDinero.save(movimientoDinero);
     }

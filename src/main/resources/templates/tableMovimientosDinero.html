@@ -51,13 +51,13 @@
                 <td th:text="${i.conceptoMovimiento}"></td>
                 <td th:text="${i.empresa.nitEmpresa}"></td>
                 <td th:text="${i.empleado.documento}"></td>
-                <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Actualizar</button></a></td>
+                <td id="tdSearch"><a th:href="@{'/enterprises/movements/update'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-primary">Actualizar</button></a></td>
                 <!-- <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td> -->
             </tr>
         </tbody>
     </table>
 
-    <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Regresar</button></a>
+    <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
 </body>
 
 </html>
