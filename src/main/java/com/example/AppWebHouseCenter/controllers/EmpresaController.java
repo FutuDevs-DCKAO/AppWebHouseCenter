@@ -6,6 +6,7 @@ import com.example.AppWebHouseCenter.services.ImpEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,14 +14,15 @@ import java.util.List;
 import java.util.Map;
 
 
-@RequestMapping("/enterprises")
-@RestController
+//@RequestMapping("/enterprises")
+//@RestController
+@Controller
 public class EmpresaController {
 
     //Creación objeto clase ImpEmpresaService para poder acceder a los métodos de la clase
     @Autowired
     private ImpEmpresaService impEmpresaService;
-    @Autowired
+    //@Autowired
 
 
    /* @GetMapping("/")
@@ -30,14 +32,17 @@ public class EmpresaController {
         }
         return "index";
     }*/
+
     //Response GET a través del objeto creado para obtener todas las empresas
-    @GetMapping
-    public List<Empresa> listarEmpresas(){
-        return impEmpresaService.listarEmpresas();
+        //Método para poder obtener todas las empresas registradas en el sistema
+    @GetMapping("/enterprises")
+    public String listarEmpresas(Model model){
+        model.addAttribute("empresas", this.impEmpresaService.listarEmpresas());
+        return ("tableEmpresas");
     }
 
     //Response POST a través del objeto creado para crear nuevas empresas
-    @PostMapping
+    @PostMapping("/enterprises/crear")
     public Empresa crearEmpresa(@RequestBody Empresa empresa){
 
         return impEmpresaService.crearEmpresa(empresa);

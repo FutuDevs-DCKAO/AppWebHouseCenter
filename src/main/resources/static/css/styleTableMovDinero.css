@@ -63,3 +63,9 @@ h2 {
     background-color: rgb(238, 240, 243);
     border: 0.5px solid black;
 }
+
+#backIndex{
+    margin: 150px;
+    padding: 50px;
+    margin-left: 620px;
+}

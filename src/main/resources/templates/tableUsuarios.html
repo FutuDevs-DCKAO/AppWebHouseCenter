@@ -25,32 +25,28 @@
     </header>
 
     <h2 id="tituloRegistroMovimiento">
-        Listado de movimientos
+        Listado de empleados
     </h2>
 
     <table>
         <thead>
             <tr>
-                <th>Id movimiento</th>
-                <th>Monto del movimiento</th>
-                <th>Montos positivos</th>
-                <th>Montos negativos</th>
-                <th>Concepto del movimiento</th>
-                <th>Empresa</th>
-                <th>Empleado</th>
+                <th>Documento</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Nit empresa</th>
                 <th>Acción 1</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr th:each="i:${movimientosDinero}">
-                <td th:text="${i.idMovimiento}"></td>
-                <td th:text="${i.montoMovimiento}"></td>
-                <td th:text="${i.montosPositivos}"></td>
-                <td th:text="${i.montosNegativos}"></td>
-                <td th:text="${i.conceptoMovimiento}"></td>
+            <tr th:each="i:${empleados}">
+                <td th:text="${i.documento}"></td>
+                <td th:text="${i.nombre}"></td>
+                <td th:text="${i.correo}"></td>
+                <td th:text="${i.rol}"></td>
                 <td th:text="${i.empresa.nitEmpresa}"></td>
-                <td th:text="${i.empleado.documento}"></td>
                 <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Actualizar</button></a></td>
                 <!-- <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td> -->
             </tr>

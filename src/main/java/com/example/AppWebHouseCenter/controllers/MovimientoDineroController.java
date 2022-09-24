@@ -39,7 +39,7 @@ public class MovimientoDineroController {
     }
 
 
-    @PostMapping("movements/save")
+    @PostMapping("enterprises/movements/save")
     public String insertarNuevosMovimientos (@Validated MovimientoDinero movimientoDinero){
 
         impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);

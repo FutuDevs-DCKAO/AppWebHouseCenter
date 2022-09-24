@@ -31,21 +31,26 @@
         <input class="controls" type="text" name="MontoMovimiento" id="MontoMovimiento" required :field="*{montoMovimiento}">
 
         <label for="MontosPositivos" class="etiquetaDesc">Montos positivos</label>
-        <input class="controls" type="text" name="MontosPositivos" id="MontosPositivos" :field="*{montosPositivos}">
+        <input class="controls" type="text" name="MontosPositivos" id="MontosPositivos" required :field="*{montosPositivos}">
 
         <label for="MontosNegativos" class="etiquetaDesc">Montos negativos</label>
-        <input class="controls" type="text" name="MontosNegativos" id="MontosNegativos" :field="*{montosNegativos}">
+        <input class="controls" type="text" name="MontosNegativos" id="MontosNegativos" required :field="*{montosNegativos}">
 
         <label for="ConceptoMovimiento" class="etiquetaDesc">Concepto movimiento</label>
-        <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento" :field="*{conceptoMovimiento}">
+        <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento"required :field="*{conceptoMovimiento}">
 
         <label for="Empresa" class="etiquetaDesc">Nit empresa</label>
-        <input class="controls" type="text" name="Empresa" id="Empresa" :field="*{empresa.nitEmpresa}">
+        <input class="controls" type="text" name="Empresa" id="Empresa" required :field="*{empresa.nitEmpresa}">
 
         <label for="Empleado" class="etiquetaDesc">Documento empleado</label>
-        <input class="controls" type="text" name="Empleado" id="Empleado" :field="*{empleado.documento}">
+        <input class="controls" type="text" name="Empleado" id="Empleado" required :field="*{empleado.documento}">
 
         <input class="botons" type="submit" value="Registrar Movimiento">
+
+
     </form>
+
+    <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Regresar</button></a>
+
 </body>
 </html>
