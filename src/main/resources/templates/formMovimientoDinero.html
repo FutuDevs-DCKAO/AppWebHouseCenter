@@ -21,7 +21,7 @@
 </header>
 
 <body>
-    <form class="form-register" th:action="@{/movements/save}" th:objec="${movimientoinsertar}" method="POST">
+    <form class="form-register" th:action="@{/enterprises/movements/save}" th:objec="${movimientoinsertar}" method="POST">
         <h4>Formulario Movimiento de Dinero</h4>
 
         <label for="idMovimiento">ID del movimiento</label>
@@ -46,6 +46,7 @@
         <input class="controls" type="text" name="Empleado" id="Empleado" :field="*{empleado.documento}">
 
         <a href="#">Aceptar terminos y Condiciones</a>
+
         <input class="botons" type="submit" value="Registrar Movimiento">
     </form>
 </body>
