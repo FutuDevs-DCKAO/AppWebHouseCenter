@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" th:href="@{/css/reset.css}">
-    <link rel="stylesheet" th:href="@{css/style_Formulario.css}">
+    <link rel="stylesheet" th:href="@{/css/style_Formulario.css}">
     <link rel="stylesheet" th:href="@{/css/stiless.css}">
     <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Formulario Registro</title>
@@ -24,28 +24,26 @@
     <form class="form-register" th:action="@{/enterprises/movements/save}" th:objec="${movimientoinsertar}" method="POST">
         <h4>Formulario Movimiento de Dinero</h4>
 
-        <label for="idMovimiento">ID del movimiento</label>
+        <label for="idMovimiento" class="etiquetaDesc">ID del movimiento</label>
         <input class="controls" type="text" name="idMovimiento" id="idMovimiento" required :field="*{idMovimiento}">
 
-        <label for="MontoMovimiento">Monto movimiento</label>
+        <label for="MontoMovimiento" class="etiquetaDesc">Monto movimiento</label>
         <input class="controls" type="text" name="MontoMovimiento" id="MontoMovimiento" required :field="*{montoMovimiento}">
 
-        <label for="MontosPositivos">Montos Positivos</label>
+        <label for="MontosPositivos" class="etiquetaDesc">Montos positivos</label>
         <input class="controls" type="text" name="MontosPositivos" id="MontosPositivos" :field="*{montosPositivos}">
 
-        <label for="MontosNegativos">Montos Negativos</label>
+        <label for="MontosNegativos" class="etiquetaDesc">Montos negativos</label>
         <input class="controls" type="text" name="MontosNegativos" id="MontosNegativos" :field="*{montosNegativos}">
 
-        <label for="ConceptoMovimiento">Concepto Movimiento</label>
+        <label for="ConceptoMovimiento" class="etiquetaDesc">Concepto movimiento</label>
         <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento" :field="*{conceptoMovimiento}">
 
-        <label for="Empresa">Nit Empresa</label>
+        <label for="Empresa" class="etiquetaDesc">Nit empresa</label>
         <input class="controls" type="text" name="Empresa" id="Empresa" :field="*{empresa.nitEmpresa}">
 
-        <label for="Empleado">Documento Empleado</label>
+        <label for="Empleado" class="etiquetaDesc">Documento empleado</label>
         <input class="controls" type="text" name="Empleado" id="Empleado" :field="*{empleado.documento}">
-
-        <a href="#">Aceptar terminos y Condiciones</a>
 
         <input class="botons" type="submit" value="Registrar Movimiento">
     </form>
