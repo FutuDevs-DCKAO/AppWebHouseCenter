@@ -79,6 +79,11 @@ a{
 .logo{
     width: 20%;
     height: 200px;
+   background-image: url('../images/logoempresa.png');
+   background-repeat: no-repeat;
+   background-size:contain;
+
+
 }
 
 #Logoempresa{
