@@ -32,27 +32,22 @@ public class MovimientoDineroController {
         return impMovimientoDineroService.consultarMovimientoDineroporId(idMovimiento);
     }
 
-    @GetMapping("/enterprises/movements/register")
+    @GetMapping("enterprises/movements/register")
     public String registroMovimientoFormulario(Model model){
         model.addAttribute("mmovimientoinsertar", new MovimientoDinero());
         return ("formMovimientoDinero");
     }
 
-<<<<<<< HEAD
 
     @PostMapping("movements/save")
     public String insertarNuevosMovimientos (@Validated MovimientoDinero movimientoDinero){
 
-=======
-    @PostMapping("/enterprises/movements/save")
-    public String insertarNuevosMovimientos(@Validated MovimientoDinero movimientoDinero){
->>>>>>> origin
         impMovimientoDineroService.crearMovimientoDinero(movimientoDinero);
         return "redirect:/enterprises/movements/all";
 
     }
 
-    //-------------------------------------------------------------
+
     @PatchMapping("/{idMovimiento}/movements")
     public MovimientoDinero actualizarMovimientoDineroId(@PathVariable("idMovimiento") String idMovimiento, @RequestBody Map<Object, Object> objectMap){
         return impMovimientoDineroService.actualizarMovimientoDineroPorId(idMovimiento, objectMap);

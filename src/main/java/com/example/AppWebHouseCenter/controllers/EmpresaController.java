@@ -1,5 +1,7 @@
 package com.example.AppWebHouseCenter.controllers;
 import com.example.AppWebHouseCenter.entities.Empresa;
+import com.example.AppWebHouseCenter.entities.Usuario;
+import com.example.AppWebHouseCenter.services.ImpAdmUserService;
 import com.example.AppWebHouseCenter.services.ImpEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -18,15 +20,16 @@ public class EmpresaController {
     //Creación objeto clase ImpEmpresaService para poder acceder a los métodos de la clase
     @Autowired
     private ImpEmpresaService impEmpresaService;
+    @Autowired
 
 
-    @GetMapping("/")
+   /* @GetMapping("/")
     public String inicio(Model model, @AuthenticationPrincipal OidcUser principal) {
         if(principal !=null) {
             System.out.print(principal.getClaims());
         }
         return "index";
-    }
+    }*/
     //Response GET a través del objeto creado para obtener todas las empresas
     @GetMapping
     public List<Empresa> listarEmpresas(){
