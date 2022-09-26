@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/styleFormEmpleado.css}">
+    <link rel="stylesheet" th:href="@{/css/stiless.css}">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Formulario Registro Empleados</title>
+</head>
+
+<header class="contheader" id="contenca">
+    <div class="titulologo">
+        <h1 class="titulo">House Center Web</h1>
+    </div>
+    <div class="logo">
+        <img src="" alt="">
+    </div>
+</header>
+
+<body>
+    <form class="form-register" th:action="@{/enterprises/movements/save}" th:object="${movimientoinsertar}" method="POST">
+        <h4>Formulario Ingreso Empleado</h4>
+
+        <label for="Documento" class="etiquetaDesc">Documento del Empleado</label>
+        <input class="controls" type="text" name="Documento" id="Documento" required th:field="*{documento}">
+
+        <label for="Nombre" class="etiquetaDesc">Nombre del Empleado</label>
+        <input class="controls" type="text" name="Nombre" id="Nombre" required th:field="*{nombre}">
+
+        <label for="Correo" class="etiquetaDesc">Correo Electronico</label>
+        <input class="controls" type="text" name="Correo" id="Correo" required th:field="*{correo}">
+
+        <label for="Rol" class="etiquetaDesc">Rol del Empleado</label>
+        <input class="controls" type="text" name="Rol" id="Rol" required th:field="*{rol}">
+
+        <label for="Empresa" class="etiquetaDesc">Nit empresa</label>
+        <input class="controls" type="text" name="Empresa" id="Empresa" required th:field="*{empresa.nitEmpresa}">
+
+        <input class="botons" type="submit" value="Registrar Empleado">
+
+
+    </form>
+
+    <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
+
+</body>
+</html>
