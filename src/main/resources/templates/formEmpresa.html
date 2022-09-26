@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/styleFormEmpresa.css">
-    <link rel="stylesheet" th:href="@{/css/styleFormEmpresa.css}">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">!-->
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/style_Formulario.css}">
+    <link rel="stylesheet" th:href="@{/css/stiless.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Formulario Empresa</title>
 </head>
 
@@ -20,21 +21,20 @@
 </header>
 
 <body>
-<form class="form-register" th:action="@{/enterprises/movements/save}" th:object="${movimientoinsertar}" method="POST">
-    <h4>Formulario Empresa</h4><
+<form class="form-register" th:action="@{/enterprises/save}" th:object="${empresainsertar}" method="POST">
+    <h4>Formulario Empresa</h4>
 
-    <label for="NitEmpresa" class="etiquetaDesc">Nit de la empresa</label>
-    <input class="controls" type="text" name="nitempresa" id="nitempresa" required th:field="*{nitEmpresa}">
+    <label for="nitEmpresa" class="etiquetaDesc">Nit de la empresa</label>
+    <input class="controls" type="text" id="nitEmpresa" required th:field="*{nitEmpresa}">
 
-    <label for="NombreEmpresa" class="etiquetaDesc">Nombre de la Empresa</label>
-    <input class="controls" type="text" name="NombreEmpresa" id="NombreEmpresa" required th:field="*{nombreEmpresa}">
+    <label for="nombreEmpresa" class="etiquetaDesc">Nombre de la empresa</label>
+    <input class="controls" type="text" id="nombreEmpresa" required th:field="*{nombreEmpresa}">
 
-    <label for="direccionEmpresa" class="etiquetaDesc">Direccion de Empresa</label>
-    <input class="controls" type="text" name="DireccionEmpresa" id="DireccionEmpresa" required th:field="*{direccionEmpresa}">
+    <label for="direccionEmpresa" class="etiquetaDesc">Dirección de Empresa</label>
+    <input class="controls" type="text" id="direccionEmpresa" required th:field="*{direccionEmpresa}">
 
-    <label for="telefonoEmpresa" class="etiquetaDesc">Telefono Empresa</label>
-    <input class="controls" type="text" name="TelefonoEmpresa" id="TelefonoEmpresa" required th:field="*{telefonoEmpresa}">
-
+    <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono Empresa</label>
+    <input class="controls" type="text" id="telefonoEmpresa" required th:field="*{telefonoEmpresa}">
 
     <input class="botons" type="submit" value="Registrar Empresa">
 
