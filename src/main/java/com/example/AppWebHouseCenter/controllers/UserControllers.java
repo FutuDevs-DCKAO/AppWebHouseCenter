@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-//@RequestMapping("/users")
-//@RestController
+
 @Controller
 public class UserControllers {
     @Autowired
@@ -22,7 +21,7 @@ public class UserControllers {
     @GetMapping("/users")
     public String listarempleados(Model model){
         model.addAttribute("empleados", this.impUserService.listarempleados());
-        return ("tableUsuarios");
+        return ("tableEmpleados");
     }
 
     //Método para obtener el empleado por medio de su documento
@@ -63,6 +62,8 @@ public class UserControllers {
         impUserService.actualizarEmpleado(empleado);
         return "redirect:/users";
     }
+
+    //----------------------------------------------------------------
 
     @PatchMapping("/{documento}")
     public Empleado editarEmpleado(@PathVariable("documento") String documento, @RequestBody Map<Object, Object> objectMap){

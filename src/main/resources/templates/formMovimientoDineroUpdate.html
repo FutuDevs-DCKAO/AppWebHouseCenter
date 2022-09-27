@@ -42,8 +42,26 @@
         <label for="Empresa" class="etiquetaDesc">Nit empresa</label>
         <input class="controls" type="text" name="Empresa" id="Empresa" required th:field="*{empresa.nitEmpresa}">
 
+        <label for="nombreEmpresa" class="etiquetaDesc">Nombre empresa</label>
+        <input class="controls" type="text" name="nombreEmpresa" id="nombreEmpresa" required th:field="*{empresa.nombreEmpresa}">
+
+        <label for="direccionEmpresa" class="etiquetaDesc">Dirección empresa</label>
+        <input class="controls" type="text" name="direccionEmpresa" id="direccionEmpresa" required th:field="*{empresa.direccionEmpresa}">
+
+        <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono empresa</label>
+        <input class="controls" type="text" name="telefonoEmpresa" id="telefonoEmpresa" required th:field="*{empresa.telefonoEmpresa}">
+
         <label for="Empleado" class="etiquetaDesc">Documento empleado</label>
         <input class="controls" type="text" name="Empleado" id="Empleado" required th:field="*{empleado.documento}">
+
+        <label for="Nombre" class="etiquetaDesc">Nombre del Empleado</label>
+        <input class="controls" type="text" name="Nombre" id="Nombre" required th:field="*{empleado.nombre}">
+
+        <label for="Correo" class="etiquetaDesc">Correo Electronico</label>
+        <input class="controls" type="text" name="Correo" id="Correo" required th:field="*{empleado.correo}">
+
+        <label for="Rol" class="etiquetaDesc">Rol del Empleado</label>
+        <input class="controls" type="text" name="Rol" id="Rol" required th:field="*{empleado.rol}">
 
         <input class="botons" type="submit" value="Actualizar Movimiento">
 
