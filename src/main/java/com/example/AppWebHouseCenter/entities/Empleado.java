@@ -11,11 +11,11 @@ public class Empleado {
 
     @Id
     private String documento;
-    @Column(name = "nombre", nullable = false, length = 50)
+    @Column(name = "nombre", length = 50)
     private String nombre;
-    @Column(name = "correo", nullable = false, length = 50)
+    @Column(name = "correo", length = 50)
     private String correo;
-    @Column(name = "rol", nullable = false, length = 30)
+    @Column(name = "rol", length = 30)
     private String rol;
 
 

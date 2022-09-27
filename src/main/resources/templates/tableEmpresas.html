@@ -45,7 +45,7 @@
                 <td th:text="${i.nombreEmpresa}"></td>
                 <td th:text="${i.direccionEmpresa}"></td>
                 <td th:text="${i.telefonoEmpresa}"></td>
-                <td id="tdSearch"><a href=""><button type="button" class="btn btn-primary">Actualizar</button></a></td>
+                <td id="tdSearch"><a th:href="@{'/enterprises/update'+'/'+${i.nitEmpresa}}"><button type="button" class="btn btn-primary">Actualizar</button></a></td>
                 <!-- <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td> -->
             </tr>
         </tbody>

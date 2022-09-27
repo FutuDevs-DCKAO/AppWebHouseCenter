@@ -51,7 +51,9 @@ public class MovimientoDineroController {
 
     }
 
-    //Método para alamcenar el id del movimiento mientras se es redireccionado al formulario de actualización
+    //-----------------------------------------------------------------------------
+
+    //Método para almacenar el id del movimiento mientras se es redireccionado al formulario de actualización
     @GetMapping("enterprises/movements/update/{idMovimiento}")
     public String formularioActualizarMovimientoDinero(@PathVariable("idMovimiento") String idMovimiento, Model model){
         MovimientoDinero movimientoDinero = impMovimientoDineroService.consultarMovimientoDineroporId(idMovimiento);
@@ -59,6 +61,7 @@ public class MovimientoDineroController {
         return ("formMovimientoDineroUpdate");
     }
 
+    //Redireccionamiento a la lista de movimientos de dinero cuando se haya realizado la actualización de la info que este comprende
     @PostMapping("enterprises/movements/update")
     public String actualizarMovimientoDinero(@Validated MovimientoDinero movimientoDinero){
         impMovimientoDineroService.actualizarMovimiento(movimientoDinero);

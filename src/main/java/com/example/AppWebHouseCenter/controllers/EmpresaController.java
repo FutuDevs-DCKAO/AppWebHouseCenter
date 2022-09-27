@@ -16,8 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 
-//@RequestMapping("/enterprises")
-//@RestController
+
 @Controller
 public class EmpresaController {
 
@@ -52,6 +51,22 @@ public class EmpresaController {
     @PostMapping("/enterprises/save")
     public String crearEmpresa(@Validated Empresa empresa){
         impEmpresaService.crearEmpresa(empresa);
+        return "redirect:/enterprises";
+    }
+
+    //---------------------------------------------
+
+    //Método para almacenar el nit de la empresa mientras se es redireccionado al formulario
+    @GetMapping("enterprises/update/{nitEmpresa}")
+    public String formularioActualizarEmpresa(@PathVariable("nitEmpresa") String nitEmpresa,Model model){
+        Empresa empresa = impEmpresaService.consultarEmpresaPorId(nitEmpresa);
+        model.addAttribute("empresaactualizar", empresa);
+        return "formEmpresaUpdate";
+    }
+
+    @PostMapping("enterprises/update")
+    public String actualizarEmpresa(@Validated Empresa empresa){
+        impEmpresaService.actualizarEmpresa(empresa);
         return "redirect:/enterprises";
     }
 

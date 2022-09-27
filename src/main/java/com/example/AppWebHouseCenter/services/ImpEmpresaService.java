@@ -35,6 +35,11 @@ public class ImpEmpresaService implements EmpresaService {
     }
 
     @Override
+    public Empresa actualizarEmpresa(Empresa empresa){
+        return repositoryEmpresa.save(empresa);
+    }
+
+    @Override
     public Empresa actualizarEmpresaPorId(String nitEmpresa, Map<Object, Object> objectMap) {
 
         Empresa empresa = repositoryEmpresa.findById(nitEmpresa).get();

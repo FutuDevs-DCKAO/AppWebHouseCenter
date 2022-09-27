@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/style_Formulario.css}">
+    <link rel="stylesheet" th:href="@{/css/stiless.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Actualización empresa</title>
+</head>
+
+<header class="contheader" id="contenca">
+    <div class="titulologo">
+        <h1 class="titulo">House Center Web</h1>
+    </div>
+    <div class="logo">
+        <img src="" alt="">
+    </div>
+</header>
+
+<body>
+<form class="form-register" th:action="@{/enterprises/update}" th:object="${empresaactualizar}" method="POST">
+    <h4>Actualización Empresa</h4>
+
+    <label for="nitEmpresa" class="etiquetaDesc">Nit de la empresa</label>
+    <input class="controls" type="text" id="nitEmpresa" required th:field="*{nitEmpresa}">
+
+    <label for="nombreEmpresa" class="etiquetaDesc">Nombre de la empresa</label>
+    <input class="controls" type="text" id="nombreEmpresa" required th:field="*{nombreEmpresa}">
+
+    <label for="direccionEmpresa" class="etiquetaDesc">Dirección de Empresa</label>
+    <input class="controls" type="text" id="direccionEmpresa" required th:field="*{direccionEmpresa}">
+
+    <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono Empresa</label>
+    <input class="controls" type="text" id="telefonoEmpresa" required th:field="*{telefonoEmpresa}">
+
+    <input class="botons" type="submit" value="Actualizar Empresa">
+
+
+</form>
+
+<a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
+
+</body>
+</html>
