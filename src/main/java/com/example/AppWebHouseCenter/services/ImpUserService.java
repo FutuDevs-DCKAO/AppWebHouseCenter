@@ -32,6 +32,11 @@ public class ImpUserService implements UserService{
     }
 
     @Override
+    public Empleado actualizarEmpleado(Empleado empleado){
+        return repositoryUser.save(empleado);
+    }
+
+    @Override
     public Empleado editarEmpleado(String documento, Map<Object,Object> objectMap) {
         Empleado empleado = repositoryUser.findById(documento).get();
         objectMap.forEach((key,value)->{

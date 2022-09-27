@@ -48,6 +48,22 @@ public class UserControllers {
 
     //----------------------------------------------
 
+    //Método para almacenar el docuemnto del empleado mientras es redireccionado al formluario de actualización
+
+    @GetMapping("users/update/{documento}")
+    public String formularioActualizarEmpleado(@PathVariable("documento") String documento, Model model){
+        Empleado empleado = impUserService.consultaEmpleadoporId(documento);
+        model.addAttribute("empleadoactualizar", empleado);
+        return ("formEmpleadosUpdate");
+    }
+
+    //Redireccionamiento a la lista de empleados cuando se haya realizado la actualización
+    @PostMapping("users/update")
+    public String actualizarEmpleado(@Validated Empleado empleado){
+        impUserService.actualizarEmpleado(empleado);
+        return "redirect:/users";
+    }
+
     @PatchMapping("/{documento}")
     public Empleado editarEmpleado(@PathVariable("documento") String documento, @RequestBody Map<Object, Object> objectMap){
         return impUserService.editarEmpleado(documento, objectMap);

@@ -10,6 +10,7 @@ public interface UserService {
     public Empleado crearEmpleados(Empleado empleado); //Crea un usuario
     public Empleado consultaEmpleadoporId(String documento); //Consulta un empleado por documento
     public Empleado editarEmpleado(String documento, Map<Object,Object> objectMap); //Edita un usuario existente
+    public Empleado actualizarEmpleado(Empleado empleado); //Actualización de los datos de un empleado
     public void eliminarEmpleado(String documento); //Elimina un usuario existente
 
 }

@@ -11,11 +11,11 @@ public class Empresa {
 
     @Id
     private String nitEmpresa;
-    @Column(name = "nombre_Empresa", length = 50)
+    @Column(name = "nombre_Empresa", nullable = false, length = 50)
     private String nombreEmpresa;
-    @Column(name = "direccion_Empresa", length = 50)
+    @Column(name = "direccion_Empresa", nullable = false, length = 50)
     private String direccionEmpresa;
-    @Column(name = "telefono_Empresa")
+    @Column(name = "telefono_Empresa", nullable = false)
     private String telefonoEmpresa;
 
 
