@@ -8,11 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
-public class UserControllers {
+public class UserController {
     @Autowired
     private ImpUserService impUserService;
 
@@ -63,9 +62,18 @@ public class UserControllers {
 
     //----------------------------------------------------------------
 
-    @PatchMapping("/{documento}")
+    //Response PUT para actualizar los datos de un empleado a través de la PK en POSTMAN
+    /*@PatchMapping("/{documento}")
     public Empleado editarEmpleado(@PathVariable("documento") String documento, @RequestBody Map<Object, Object> objectMap){
         return impUserService.editarEmpleado(documento, objectMap);
+    }*/
+
+    //-----------------------------------------------------------------
+
+    @GetMapping("/users/delete/{documento}")
+    public String eliminarEmpleadoPorDocumento(@PathVariable("documento") String documento){
+        impUserService.eliminarEmpleado(documento);
+        return "redirect:/users";
     }
 
     @DeleteMapping("/{documento}")

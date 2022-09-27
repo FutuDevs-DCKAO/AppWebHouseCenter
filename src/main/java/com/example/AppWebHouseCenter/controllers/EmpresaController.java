@@ -70,19 +70,30 @@ public class EmpresaController {
         return "redirect:/enterprises";
     }
 
+    //----------------------------------------------------------------------------------------------------
 
 
-    //Response PUT para actualizar los datos de una empresa a través de la primary key (NIT)
-    @PatchMapping("/{nitEmpresa}")
+    //Response PATCH para actualizar los datos de una empresa a través de la PK en POSTMAN
+    /*@PatchMapping("/{nitEmpresa}")
     public Empresa actualizarEmpresa(@PathVariable("nitEmpresa") String nitEmpresa, @RequestBody Map<Object, Object> objectMap){
         return impEmpresaService.actualizarEmpresaPorId(nitEmpresa, objectMap);
+    }*/
+
+    //------------------------------------------------------
+
+    //Método para la eliminación de una empresa a través de su nit (PK)
+    @GetMapping("/enterprises/delete/{nitEmpresa}")
+    public String eliminarEmpresaPorNit(@PathVariable("nitEmpresa") String nitEmpresa){
+        impEmpresaService.eliminarEmpresaPorId(nitEmpresa);
+        return "redirect:/enterprises";
     }
 
-    //Response DELETE para borrar una empresa a través de la primary key (NIT)
-    @DeleteMapping("/{nitEmpresa}")
+    //------------------------------------------------------
+
+    //Response DELETE para borrar una empresa a través de la PK en POSTMAN
+    /*@DeleteMapping("/{nitEmpresa}")
     public void eliminarEmpresa(@PathVariable("nitEmpresa") Empresa empresa){
         impEmpresaService.eliminarEmpresaPorId(empresa.getNitEmpresa());
-    }
-//-----------------------------------------------
+    }*/
 
 }

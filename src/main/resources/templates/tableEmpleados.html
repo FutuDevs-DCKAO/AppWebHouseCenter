@@ -37,6 +37,7 @@
                 <th>Rol</th>
                 <th>Nit empresa</th>
                 <th>Acción 1</th>
+                <th>Acción 2</th>
             </tr>
         </thead>
 
@@ -48,7 +49,7 @@
                 <td th:text="${i.rol}"></td>
                 <td th:text="${i.empresa.nitEmpresa}"></td>
                 <td id="tdSearch"><a th:href="@{'/users/update'+'/'+${i.documento}}"><button type="button" class="btn btn-primary">Actualizar</button></a></td>
-                <!-- <td id="tdDelete"><a th:href="@{'/enterprises/movements/all/eliminar'+'/'+${i.idMovimiento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td> -->
+                <td id="tdDelete"><a th:href="@{'/users/delete'+'/'+${i.documento}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
             </tr>
         </tbody>
     </table>

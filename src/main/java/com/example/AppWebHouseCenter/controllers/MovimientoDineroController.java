@@ -70,20 +70,25 @@ public class MovimientoDineroController {
 
     //----------------------------------------------------------
 
-    @PatchMapping("/{idMovimiento}/movements")
+    //Response PATCH para actualizar los datos de una empresa a través de la PK en POSTMAN
+    /*@PatchMapping("/{idMovimiento}/movements")
     public MovimientoDinero actualizarMovimientoDineroId(@PathVariable("idMovimiento") String idMovimiento, @RequestBody Map<Object, Object> objectMap){
         return impMovimientoDineroService.actualizarMovimientoDineroPorId(idMovimiento, objectMap);
+    }*/
+
+    //Método para la eliminación de una empresa a través de su nit (PK)
+    @GetMapping("/enterprises/movements/delete/{idMovimiento}")
+    public String eliminarMovimientoPorId(@PathVariable("idMovimiento") String idMovimiento){
+        impMovimientoDineroService.eliminarMovimientoDinero(idMovimiento);
+        return "redirect:/enterprises/movements/all";
     }
 
-    @DeleteMapping("/enterprises/{idMovimiento}/movements")
+    //----------------------------------------------------------
+
+    //Response DELETE para borrar un movimiento de dinero a través de la PK en POSTMAN
+    /*@DeleteMapping("/enterprises/{idMovimiento}/movements")
     public void eliminarPorIdPruebaPostMan(@PathVariable("idMovimiento") String idMovimiento){
         impMovimientoDineroService.eliminarMovimientoDinero(idMovimiento);
-    }
-
-    //Método get para la eliminación del movimiento de dinero en la tabla de movimientos
-    /*@GetMapping("/enterprises/movements/all/eliminar/{idMovimiento}")
-    public String eliminarMovimientoDineroPorId(@PathVariable("idMovimiento") String idMovimiento){
-       impMovimientoDineroService.eliminarMovimientoDinero(idMovimiento);
-       return ("redirect:/enterprises/movements/all");
     }*/
+
 }
