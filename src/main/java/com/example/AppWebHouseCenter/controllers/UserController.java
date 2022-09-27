@@ -72,12 +72,14 @@ public class UserController {
 
     @GetMapping("/users/delete/{documento}")
     public String eliminarEmpleadoPorDocumento(@PathVariable("documento") String documento){
-        impUserService.eliminarEmpleado(documento);
+        impUserService.eliminarEmpleadoPorId(documento);
         return "redirect:/users";
     }
 
-    @DeleteMapping("/{documento}")
+    //------------------------------------------------------------------
+
+    /*@DeleteMapping("/{documento}")
     public void eliminarEmpleado(@PathVariable("documento") String documento){
         impUserService.eliminarEmpleado(documento);
-    }
+    }*/
 }

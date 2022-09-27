@@ -47,7 +47,7 @@ public class ImpUserService implements UserService{
         return repositoryUser.save(empleado);
     }
     @Override
-    public void eliminarEmpleado(String documento) {
+    public void eliminarEmpleadoPorId(String documento) {
         repositoryUser.deleteById(documento);
     }
 }

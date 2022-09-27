@@ -20,13 +20,23 @@ public class MovimientoDinero {
     @Column(name = "concepto_Movimiento", nullable = false)
     private String conceptoMovimiento;
 
-
-    @ManyToOne(cascade = CascadeType.ALL)
+    //Versión original
+    /*@ManyToOne(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "nit_Empresa")
-    Empresa empresa;
-    @ManyToOne(cascade = CascadeType.ALL)
+    Empresa empresa;*/
+
+    //Versión original
+    /*@ManyToOne(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "documento_Empleado")
+    Empleado empleado;*/
+
+    @ManyToOne
+    @JoinColumn(name = "nit_Empresa")
+    Empresa empresa;
+
+    @ManyToOne
     @JoinColumn(name = "documento_Empleado")
     Empleado empleado;
 

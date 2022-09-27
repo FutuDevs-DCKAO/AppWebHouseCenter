@@ -19,8 +19,13 @@ public class Empleado {
     private String rol;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    //Versión original
+    /*@ManyToOne(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "nit_Empresa")
+    Empresa empresa;*/
+
+    @ManyToOne
     @JoinColumn(name = "nit_Empresa")
     Empresa empresa;
 
