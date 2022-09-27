@@ -39,25 +39,25 @@
         <label for="ConceptoMovimiento" class="etiquetaDesc">Concepto movimiento</label>
         <input class="controls" type="text" name="ConceptoMovimiento" id="ConceptoMovimiento"required th:field="*{conceptoMovimiento}">
 
-        <label for="Empresa" class="etiquetaDesc">Nit empresa</label>
+        <label for="Empresa" class="etiquetaDesc">Nit empresa que registra el movimiento</label>
         <input class="controls" type="text" name="Empresa" id="Empresa" required th:field="*{empresa.nitEmpresa}">
 
-        <label for="nombreEmpresa" class="etiquetaDesc">Nombre empresa</label>
+        <label for="nombreEmpresa" class="etiquetaDesc">Nombre empresa que registra el movimiento</label>
         <input class="controls" type="text" name="nombreEmpresa" id="nombreEmpresa" required th:field="*{empresa.nombreEmpresa}">
 
-        <label for="direccionEmpresa" class="etiquetaDesc">Dirección empresa</label>
+        <label for="direccionEmpresa" class="etiquetaDesc">Dirección empresa que registra el movimiento</label>
         <input class="controls" type="text" name="direccionEmpresa" id="direccionEmpresa" required th:field="*{empresa.direccionEmpresa}">
 
-        <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono empresa</label>
+        <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono empresa que registra el movimiento</label>
         <input class="controls" type="text" name="telefonoEmpresa" id="telefonoEmpresa" required th:field="*{empresa.telefonoEmpresa}">
 
-        <label for="Empleado" class="etiquetaDesc">Documento empleado</label>
+        <label for="Empleado" class="etiquetaDesc">Documento empleado que registra el movimiento</label>
         <input class="controls" type="text" name="Empleado" id="Empleado" required th:field="*{empleado.documento}">
 
-        <label for="Nombre" class="etiquetaDesc">Nombre del Empleado</label>
+        <label for="Nombre" class="etiquetaDesc">Nombre del Empleado que registra el movimiento</label>
         <input class="controls" type="text" name="Nombre" id="Nombre" required th:field="*{empleado.nombre}">
 
-        <label for="Correo" class="etiquetaDesc">Correo Electronico</label>
+        <label for="Correo" class="etiquetaDesc">Correo Electronico del empleado</label>
         <input class="controls" type="text" name="Correo" id="Correo" required th:field="*{empleado.correo}">
 
         <label for="Rol" class="etiquetaDesc">Rol del Empleado</label>
@@ -68,7 +68,10 @@
 
     </form>
 
-    <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
+    <div class="contBtnIndex">
+        <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
+    </div>
+
 
 </body>
 </html>

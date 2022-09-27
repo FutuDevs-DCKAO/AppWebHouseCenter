@@ -67,10 +67,14 @@ body{
     font-size: 15px;
 }
 
+.contBtnIndex{
+    margin-top: 15px;
+}
+
 #backIndex{
     margin: 150px;
     padding: 50px;
-    margin-left: 620px;
+    margin-left: 640px;
 }
 
 

@@ -21,27 +21,29 @@
 </header>
 
 <body>
-<form class="form-register" th:action="@{/enterprises/update}" th:object="${empresaactualizar}" method="POST">
-    <h4>Actualización Empresa</h4>
+    <form class="form-register" th:action="@{/enterprises/update}" th:object="${empresaactualizar}" method="POST">
+        <h4>Actualización Empresa</h4>
 
-    <label for="nitEmpresa" class="etiquetaDesc">Nit de la empresa</label>
-    <input class="controls" type="text" id="nitEmpresa" required th:field="*{nitEmpresa}">
+        <label for="nitEmpresa" class="etiquetaDesc">Nit de la empresa</label>
+        <input class="controls" type="text" id="nitEmpresa" required th:field="*{nitEmpresa}">
 
-    <label for="nombreEmpresa" class="etiquetaDesc">Nombre de la empresa</label>
-    <input class="controls" type="text" id="nombreEmpresa" required th:field="*{nombreEmpresa}">
+        <label for="nombreEmpresa" class="etiquetaDesc">Nombre de la empresa</label>
+        <input class="controls" type="text" id="nombreEmpresa" required th:field="*{nombreEmpresa}">
 
-    <label for="direccionEmpresa" class="etiquetaDesc">Dirección de Empresa</label>
-    <input class="controls" type="text" id="direccionEmpresa" required th:field="*{direccionEmpresa}">
+        <label for="direccionEmpresa" class="etiquetaDesc">Dirección de Empresa</label>
+        <input class="controls" type="text" id="direccionEmpresa" required th:field="*{direccionEmpresa}">
 
-    <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono Empresa</label>
-    <input class="controls" type="text" id="telefonoEmpresa" required th:field="*{telefonoEmpresa}">
+        <label for="telefonoEmpresa" class="etiquetaDesc">Teléfono Empresa</label>
+        <input class="controls" type="text" id="telefonoEmpresa" required th:field="*{telefonoEmpresa}">
 
-    <input class="botons" type="submit" value="Actualizar Empresa">
+        <input class="botons" type="submit" value="Actualizar Empresa">
 
 
-</form>
+    </form>
 
-<a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
+    <div class="contBtnIndex">
+        <a th:href="@{/}" id="backIndex"><button type="button" class="btn btn-info">Ir al index</button></a>
+    </div>
 
 </body>
 </html>

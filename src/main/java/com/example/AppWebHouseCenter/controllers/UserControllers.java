@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-
 @Controller
 public class UserControllers {
     @Autowired
@@ -25,7 +24,7 @@ public class UserControllers {
     }
 
     //Método para obtener el empleado por medio de su documento
-    @GetMapping("/{documento}")
+    @GetMapping("/users/{documento}")
     public Empleado consultaEmpleadoporId(@PathVariable("documento") String documento){
         return impUserService.consultaEmpleadoporId(documento);
     }
@@ -33,13 +32,13 @@ public class UserControllers {
     //-------------------------------------------------------------------
 
     //Método para mostrar el formulario de registro de los nuevos empleados a insertar
-    @GetMapping("users/register")
+    @GetMapping("/users/register")
     public String registrarEmpleado(Model model){
         model.addAttribute("empleadoinsertar", new Empleado());
         return ("formEmpleados");
     }
     //Método para redireccionar al sitio cuando el nuevo empleado haya sido registrado
-    @PostMapping("users/save")
+    @PostMapping("/users/save")
     public String crearEmpleados(@Validated Empleado empleado){
         impUserService.crearEmpleados(empleado);
         return "redirect:/users";
@@ -48,7 +47,6 @@ public class UserControllers {
     //----------------------------------------------
 
     //Método para almacenar el docuemnto del empleado mientras es redireccionado al formluario de actualización
-
     @GetMapping("users/update/{documento}")
     public String formularioActualizarEmpleado(@PathVariable("documento") String documento, Model model){
         Empleado empleado = impUserService.consultaEmpleadoporId(documento);
