@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/ProyectoCooperativa-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/AppWebHouseCenter-0.0.1-SNAPSHOT.jar
